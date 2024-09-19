@@ -1,0 +1,154 @@
+{
+  "project_info": {
+    "project_number": "489235477653",
+    "project_id": "quickmeet-be146",
+    "storage_bucket": "quickmeet-be146.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489235477653:android:84061a7e698345a152579c",
+        "android_client_info": {
+          "package_name": "com.charusat.quckmeet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489235477653-9d7kldbihrkaqsnqj0e0e0tjon4op8gj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZOFMf19jpryNr7B0ongdJ-Dwa6bKjumk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489235477653-9d7kldbihrkaqsnqj0e0e0tjon4op8gj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "489235477653-58fca2matp3smlbua0cqusaqqkntgipu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.quickMeet"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489235477653:android:28eca7c5fa3008ba52579c",
+        "android_client_info": {
+          "package_name": "com.charusat.quickmeet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489235477653-9d7kldbihrkaqsnqj0e0e0tjon4op8gj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZOFMf19jpryNr7B0ongdJ-Dwa6bKjumk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489235477653-9d7kldbihrkaqsnqj0e0e0tjon4op8gj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "489235477653-58fca2matp3smlbua0cqusaqqkntgipu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.quickMeet"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489235477653:android:9867742391678b7452579c",
+        "android_client_info": {
+          "package_name": "com.example.final_quick_meet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489235477653-9d7kldbihrkaqsnqj0e0e0tjon4op8gj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZOFMf19jpryNr7B0ongdJ-Dwa6bKjumk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489235477653-9d7kldbihrkaqsnqj0e0e0tjon4op8gj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "489235477653-58fca2matp3smlbua0cqusaqqkntgipu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.quickMeet"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489235477653:android:ce06c5fbab8b5c7352579c",
+        "android_client_info": {
+          "package_name": "com.example.quickmeet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489235477653-9d7kldbihrkaqsnqj0e0e0tjon4op8gj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZOFMf19jpryNr7B0ongdJ-Dwa6bKjumk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489235477653-9d7kldbihrkaqsnqj0e0e0tjon4op8gj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "489235477653-58fca2matp3smlbua0cqusaqqkntgipu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.quickMeet"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
