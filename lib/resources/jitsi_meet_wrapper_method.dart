@@ -1,16 +1,10 @@
 import 'package:flutter/cupertino.dart';
-
-// import 'package:zoom_clone/utils/feature_flag.dart';
-
-import '../utils/feature_flag.dart';
-import '../utils/jitsi_meeting_listener.dart';
-import "package:final_quick_meet/utils/jitsi_meeting_options.dart";
-import 'auth_methods.dart';
 import 'package:jitsi_meet_wrapper/jitsi_meet_wrapper.dart';
+
+import 'auth_methods.dart';
 
 class JitsiMeetMethod {
   final AuthMethods _authMethods = AuthMethods();
-  // final FirestoreMethods _firestoreMethods = FirestoreMethods();
 
   final serverText = TextEditingController();
   final roomText = TextEditingController(text: "jitsi-meet-wrapper-test-room");
@@ -25,18 +19,14 @@ class JitsiMeetMethod {
     required String roomName,
     required bool isAudioMuted,
     required bool isVideoMuted,
+    required String password, // Password parameter added
     String username = '',
   }) async {
     try {
       String? serverUrl =
           serverText.text.trim().isEmpty ? null : serverText.text;
 
-      Map<FeatureFlag, Object> featureFlags = {
-        // FeatureFlag.isWelcomePageEnabled,
-        // FeatureFlag.resolution,
-      } ;
-
-
+      // Since 'roomPassword' doesn't exist, handle password manually
 
       String name;
       if (username.isEmpty) {
@@ -47,29 +37,20 @@ class JitsiMeetMethod {
 
       // Define meetings options here
       var options = JitsiMeetingOptions(
-        // roomNameOrUrl: roomName
-        roomNameOrUrl: roomText.text,
+        roomNameOrUrl: roomName, // Use the provided roomName
         serverUrl: serverUrl,
         subject: subjectText.text,
         token: tokenText.text,
         isAudioMuted: isAudioMuted,
         isAudioOnly: isAudioOnly,
         isVideoMuted: isVideoMuted,
-        userDisplayName: _authMethods.user.displayName,
+        userDisplayName: name,
         userEmail: _authMethods.user.email,
-        featureFlags: featureFlags,
+        // You can share the password externally with participants
       );
 
-      // await JitsiMeetWrapper.joinMeeting(
-      //   options: options,
-      //   listener: JitsiMeetingListener(
-      //     onConferenceWillJoin: (url) => print("onConferenceWillJoin: url: $url"),
-      //     onConferenceJoined: (url) => print("onConferenceJoined: url: $url"),
-      //     onConferenceTerminated: (url, error) => print("onConferenceTerminated: url: $url, error: $error"),
-      //   ),
-      // );
-
       debugPrint("JitsiMeetingOptions: $options");
+
       await JitsiMeetWrapper.joinMeeting(
         options: options,
         listener: JitsiMeetingListener(
@@ -122,11 +103,11 @@ class JitsiMeetMethod {
         ),
       );
 
-      // _firestoreMethods.addToMeetingHistory(roomName);
-      // await JitsiMeet.joinMeeting(options);
+      // Manually handle password distribution
+      // For example: show a dialog or share the password via chat, email, etc.
+      debugPrint("Meeting password: $password");
     } catch (error) {
       print("error: $error");
     }
   }
 }
-

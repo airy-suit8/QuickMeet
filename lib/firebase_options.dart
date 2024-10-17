@@ -25,9 +25,15 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
-        return windows;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for windows - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -52,7 +58,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBZOFMf19jpryNr7B0ongdJ-Dwa6bKjumk',
-    appId: '1:489235477653:android:9867742391678b7452579c',
+    appId: '1:489235477653:android:ce06c5fbab8b5c7352579c',
     messagingSenderId: '489235477653',
     projectId: 'quickmeet-be146',
     storageBucket: 'quickmeet-be146.appspot.com',
@@ -60,34 +66,13 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCZZKeyTSiwFztasEdO0eJ-DicYS6r3FMQ',
-    appId: '1:489235477653:ios:e353d42be06c57bf52579c',
+    appId: '1:489235477653:ios:9124187fc466343152579c',
     messagingSenderId: '489235477653',
     projectId: 'quickmeet-be146',
     storageBucket: 'quickmeet-be146.appspot.com',
     androidClientId: '489235477653-4l41bhpiudlvq1bv7rn6pes9d5coegr5.apps.googleusercontent.com',
-    iosClientId: '489235477653-m7j4t7966939c8akfidkk9glvmsn4917.apps.googleusercontent.com',
-    iosBundleId: 'com.example.finalQuickMeet',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCZZKeyTSiwFztasEdO0eJ-DicYS6r3FMQ',
-    appId: '1:489235477653:ios:e353d42be06c57bf52579c',
-    messagingSenderId: '489235477653',
-    projectId: 'quickmeet-be146',
-    storageBucket: 'quickmeet-be146.appspot.com',
-    androidClientId: '489235477653-4l41bhpiudlvq1bv7rn6pes9d5coegr5.apps.googleusercontent.com',
-    iosClientId: '489235477653-m7j4t7966939c8akfidkk9glvmsn4917.apps.googleusercontent.com',
-    iosBundleId: 'com.example.finalQuickMeet',
-  );
-
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCWGngQUofi7z6QXE44SiAN3SfdDegSKqE',
-    appId: '1:489235477653:web:e4d922392b279f3152579c',
-    messagingSenderId: '489235477653',
-    projectId: 'quickmeet-be146',
-    authDomain: 'quickmeet-be146.firebaseapp.com',
-    storageBucket: 'quickmeet-be146.appspot.com',
-    measurementId: 'G-VKDGDMG8T6',
+    iosClientId: '489235477653-82hrt5eqkm3de44tf8hqo6csqeg6jfmi.apps.googleusercontent.com',
+    iosBundleId: 'com.shubhamzoom.zoomClone',
   );
 
 }

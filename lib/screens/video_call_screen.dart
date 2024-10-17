@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
-import '../resources/auth_methods.dart';
-import '../resources/jitsi_meet_wrapper_method.dart';
-import '../utils/colors.dart';
+import 'package:zoom_clone/resources/auth_methods.dart';
+import 'package:zoom_clone/resources/jitsi_meet_wrapper_method.dart';
+import 'package:zoom_clone/utils/colors.dart';
+
 import '../widgets/meeting_option.dart';
 
 class VideoCallScreen extends StatefulWidget {
-  const VideoCallScreen({Key? key}) : super(key: key);
+  final String? meetingID;
+  final String? meetingPassword; 
+
+  const VideoCallScreen({
+    Key? key,
+    this.meetingID,     // Optional meeting ID
+    this.meetingPassword, // Optional meeting password
+  }) : super(key: key);
 
   @override
   State<VideoCallScreen> createState() => _VideoCallScreenState();
@@ -16,14 +24,22 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
 
   late TextEditingController meetingIdController;
   late TextEditingController nameController;
+  late TextEditingController passwordController; 
 
   bool isAudioMuted = true;
   bool isVideoMuted = true;
 
   @override
   void initState() {
-    meetingIdController = TextEditingController();
-    nameController = TextEditingController(text: _authMethods.user.displayName);
+    meetingIdController = TextEditingController(
+      text: widget.meetingID ?? '',  // If meetingID is passed, use it
+    );
+    nameController = TextEditingController(
+      text: _authMethods.user.displayName ?? '',
+    );
+    passwordController = TextEditingController(
+      text: widget.meetingPassword ?? '',  // If password is passed, use it
+    );
     super.initState();
   }
 
@@ -32,16 +48,18 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
     super.dispose();
     meetingIdController.dispose();
     nameController.dispose();
+    passwordController.dispose(); 
   }
-
-  _joinMeeting() {
-    JitsiMeetMethod().createMeeting(
-      roomName: meetingIdController.text,
-      isAudioMuted: isAudioMuted,
-      isVideoMuted: isVideoMuted,
-      username: nameController.text,
-    );
-  }
+_joinMeeting() {
+  // Ensure you're not trying to assign this to a variable
+  JitsiMeetMethod().createMeeting(
+    roomName: meetingIdController.text,
+    isAudioMuted: isAudioMuted,
+    isVideoMuted: isVideoMuted,
+    username: nameController.text,
+    password: passwordController.text, // Pass the password to the meeting
+  );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -57,22 +75,24 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
       ),
       body: Column(
         children: [
-          SizedBox(
-            height: 60,
-            child: TextField(
-              controller: meetingIdController,
-              maxLines: 1,
-              textAlign: TextAlign.center,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                fillColor: secondaryBackgroundColor,
-                filled: true,
-                border: InputBorder.none,
-                hintText: 'Room ID',
-                contentPadding: EdgeInsets.fromLTRB(16, 8, 0, 0),
+          // Show Meeting ID and Password fields only if they are not provided
+          if (widget.meetingID == null)
+            SizedBox(
+              height: 60,
+              child: TextField(
+                controller: meetingIdController,
+                maxLines: 1,
+                textAlign: TextAlign.center,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  fillColor: secondaryBackgroundColor,
+                  filled: true,
+                  border: InputBorder.none,
+                  hintText: 'Room ID',
+                  contentPadding: EdgeInsets.fromLTRB(16, 8, 0, 0),
+                ),
               ),
             ),
-          ),
           SizedBox(
             height: 60,
             child: TextField(
@@ -89,6 +109,23 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
               ),
             ),
           ),
+          if (widget.meetingPassword == null)
+            SizedBox(
+              height: 60,
+              child: TextField(
+                controller: passwordController, 
+                maxLines: 1,
+                textAlign: TextAlign.center,
+                obscureText: true, 
+                decoration: const InputDecoration(
+                  fillColor: secondaryBackgroundColor,
+                  filled: true,
+                  border: InputBorder.none,
+                  hintText: 'Password',
+                  contentPadding: EdgeInsets.fromLTRB(16, 8, 0, 0),
+                ),
+              ),
+            ),
           const SizedBox(
             height: 20,
           ),
@@ -108,8 +145,8 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
           MeetingOption(
             text: 'Mute Audio',
             isMute: isAudioMuted,
-            onChange: (bool) {
-              // onAudioMuted;
+            onChange: (bool value) {
+              onAudioMuted(value);
             },
           ),
           const SizedBox(
@@ -118,8 +155,8 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
           MeetingOption(
             text: 'Turn off My video',
             isMute: isVideoMuted,
-            onChange: (bool) {
-              onVideoMuted;
+            onChange: (bool value) {
+              onVideoMuted(value);
             },
           ),
         ],

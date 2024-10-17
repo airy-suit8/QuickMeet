@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import '../utils/colors.dart';
+import 'package:zoom_clone/screens/meeting_screen.dart';
+import 'package:zoom_clone/utils/colors.dart';
+
 import 'history_meeting_screen.dart';
-
-
-import 'meeting_screen.dart';
-
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -25,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> pages = [
     const MeetingScreen(),
     const HostoryMeetingScreen(),
-    const Text('Shubham '),
+    const Text('Quickmeet '),
     const Text('Settings'),
   ];
 

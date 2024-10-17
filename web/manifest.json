@@ -1,6 +1,6 @@
 {
-    "name": "final_quick_meet",
-    "short_name": "final_quick_meet",
+    "name": "zoom_clone",
+    "short_name": "zoom_clone",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

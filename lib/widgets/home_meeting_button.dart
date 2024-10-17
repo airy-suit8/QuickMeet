@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/colors.dart';
+import 'package:zoom_clone/utils/colors.dart';
 
 class HomeMeetingButton extends StatelessWidget {
   final VoidCallback onPressed;

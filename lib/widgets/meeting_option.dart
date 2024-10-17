@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/colors.dart';
+import 'package:zoom_clone/utils/colors.dart';
 
 class MeetingOption extends StatelessWidget {
   final String text;

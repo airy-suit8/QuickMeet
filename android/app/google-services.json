@@ -148,6 +148,42 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489235477653:android:baed059fd0c7496252579c",
+        "android_client_info": {
+          "package_name": "com.shubhamzoom.zoom_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489235477653-9d7kldbihrkaqsnqj0e0e0tjon4op8gj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZOFMf19jpryNr7B0ongdJ-Dwa6bKjumk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489235477653-9d7kldbihrkaqsnqj0e0e0tjon4op8gj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "489235477653-58fca2matp3smlbua0cqusaqqkntgipu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.quickMeet"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"
